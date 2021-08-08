@@ -3,14 +3,14 @@
 int main()
 {
 
-	int arr[5] = {1, 3, 4, 5, 6};
+	int arr[5] = {2, 3, 4, 5, 6};
 
 	for(int i=0; i<5; i++)
 	{
 		printf("arr[%d] = %d\n", i, arr[i]);
 	}
 
-	int newNum = 2;
+	int newNum = 1;
 	int flag = -1;
 	int prevTemp = 0;
 	int nextTemp = 0;
