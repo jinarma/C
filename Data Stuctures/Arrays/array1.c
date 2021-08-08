@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-int main(){
+int main()
+{
 
 	int arr[5] = {1, 3, 4, 5, 6};
 
@@ -9,24 +10,30 @@ int main(){
 		printf("arr[%d] = %d\n", i, arr[i]);
 	}
 
-	int temp = 2;
-	int flag = 0;
+	int newNum = 2;
+	int flag = -1;
+	int prevTemp = 0;
+	int nextTemp = 0;
 	for (int i = 0; i < 5; i++)
 	{
-		if(arr[i]<2)
+		if(arr[i]<newNum)
 		{
 			continue;
 		}
-		else if(arr[i]>2 && flag==0)
+		else if(arr[i]>newNum && flag==-1)
 		{
 			flag = i;
+			prevTemp = arr[i];
+
 		}
 		else
 		{
-			arr[i-1] = arr[i];
+			nextTemp = arr[i];
+			arr[i] = prevTemp;
+			prevTemp = nextTemp;
 		}
 	}
-	arr[flag] = temp;
+	arr[flag] = newNum;
 
 	printf("\n");
 
@@ -36,4 +43,5 @@ int main(){
 	}
 
 	return 0;
+
 }
